@@ -19,15 +19,15 @@ const initializeDbAndServer = async() => {
 
         );
 
-        catch (error) {
-            console.log(`DB error:${error.message}`);
+     } catch (error) {
+            console.log(`DB Error:${error.message}`);
             process.exit(1);
         }
     };
 
     initializeDbAndServer();
 
-    convert playerDbObjectToResponseObject = (dbObject) => {
+    const convertPlayerDbObjectToResponseObject = (dbObject) => {
         return {
             playerId:dbObject.player_id,
             playerName:dbObject.player_name,
